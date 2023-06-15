@@ -1,0 +1,36 @@
+# This file configures the static analysis results for your project (errors,
+# warnings, and lints).
+#
+# This enables the 'recommended' set of lints from `package:lints`.
+# This set helps identify many issues that may lead to problems when running
+# or consuming Dart code, and enforces writing Dart using a single, idiomatic
+# style and format.
+#
+# If you want a smaller set of lints you can change this to specify
+# 'package:lints/core.yaml'. These are just the most critical lints
+# (the recommended set includes the core lints).
+# The core lints are also what is used by pub.dev for scoring packages.
+
+include: package:lints/recommended.yaml
+
+linter:
+  rules:
+    library_prefixes: false
+    constant_identifier_names: false
+    prefer_double_quotes: false
+    prefer_single_quotes: true
+    prefer_const_declarations: true
+    avoid_final_parameters: true
+    prefer_final_fields: true
+    prefer_final_in_for_each: true
+    prefer_final_locals: true
+    unnecessary_nullable_for_final_variable_declarations: true
+    require_trailing_commas: true
+    unnecessary_await_in_return: true
+    avoid_redundant_argument_values: true
+    unnecessary_parenthesis: true
+    always_declare_return_types: true
+    avoid_void_async: true
+    prefer_relative_imports: true
+    avoid_relative_lib_imports: true
+    avoid_function_literals_in_foreach_calls: false
