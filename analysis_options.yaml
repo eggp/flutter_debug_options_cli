@@ -13,6 +13,7 @@
 
 include: package:lints/recommended.yaml
 
+# Camino Solutions lint rule set
 linter:
   rules:
     library_prefixes: false
