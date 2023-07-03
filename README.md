@@ -1,2 +1,5 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# Usage
+
+1. clone repository
+2. install flutter packages: `flutter pub get`
+3. run command: `dart run bin/flutter_debug_options_cli.dart`
