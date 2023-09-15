@@ -10,12 +10,12 @@ dependencies:
   args: 2.4.2
   pub_update_checker: 1.2.0
   ansicolor: 2.0.1
-  collection: 1.17.0
+  collection: 1.18.0
   dart_emoji: 0.2.0+2
 
 dev_dependencies:
   lints: 2.1.1
-  test: 1.24.3
+  test: 1.24.6
 
 executables:
   flutter_debug_options_cli: flutter_debug_options_cli
