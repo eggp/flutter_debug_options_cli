@@ -2,6 +2,12 @@ import '../argument/model/cli_argument.dart';
 
 const cliArgumentActivate =
     CliArgument(name: 'activate', abbr: 'a', help: 'Activate this plugin(enable extensions in chrome)');
+const cliArgumentExtensionPath = CliArgument(
+  name: 'extension-path',
+  abbr: 'e',
+  help: 'Extension path(use with activate[experimental feature!])',
+  valueHelp: 'path',
+);
 const cliArgumentStatus =
     CliArgument(name: 'status', abbr: 's', help: 'Show chrome extension enabled or disabled status');
 const cliArgumentReset =
@@ -14,9 +20,11 @@ const cliArgumentFlutterBinPath = CliArgument(
 );
 
 const chromeParameterDisableExtension = "      '--disable-extensions',\n";
+String chromeParameterLoadExtension(String path) => "      '--load-extension=$path',\n";
 
 final List<CliArgument> cliArguments = [
   cliArgumentActivate,
+  cliArgumentExtensionPath,
   cliArgumentStatus,
   cliArgumentReset,
   cliArgumentFlutterBinPath,

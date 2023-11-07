@@ -63,6 +63,7 @@ class FlutterDebugOptionsCli {
   void _activate({
     required File chromeDartFile,
     required String chromeDartFileContent,
+    String? extensionPath,
   }) {
     if (_isEnabledExtensionsInChrome(chromeDartFileContent)) {
       print(
@@ -71,7 +72,14 @@ class FlutterDebugOptionsCli {
       exit(1);
     }
 
-    final newContent = chromeDartFileContent.replaceFirst(
+    String newContent = chromeDartFileContent;
+
+    if (extensionPath != null && extensionPath.isNotEmpty && newContent.contains('--load-extension') == false) {
+      newContent = newContent.replaceFirst(chromeParameterDisableExtension,
+          '$chromeParameterDisableExtension${chromeParameterLoadExtension(extensionPath)}');
+    }
+
+    newContent = newContent.replaceFirst(
       chromeParameterDisableExtension,
       '',
     );
@@ -126,6 +134,7 @@ class FlutterDebugOptionsCli {
     );
   }
 
+  // TODO remove -load-extension=.*
   void _reset({
     required File chromeDartFile,
     required String chromeDartFileContent,
@@ -166,6 +175,7 @@ class FlutterDebugOptionsCli {
       _activate(
         chromeDartFile: chromeDartFile,
         chromeDartFileContent: chromeDartFileContent,
+        extensionPath: _userArguments.getParsedArg<String?>(cliArgument: cliArgumentExtensionPath, checkNull: false),
       );
     } else if (_userArguments.getParsedArg(cliArgument: cliArgumentStatus)) {
       _status(
